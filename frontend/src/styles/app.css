@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Color Variable Reference
+
+  --background: App background
+  --foreground: Main text color
+  --card / --card-foreground: Card backgrounds and text
+  --popover / --popover-foreground: Popover/dropdown backgrounds and text
+  --primary / --primary-foreground: Main brand/action color and text on it
+  --secondary / --secondary-foreground: Secondary accent and text
+  --muted / --muted-foreground: Subtle backgrounds and text (e.g. disabled)
+  --accent / --accent-foreground: Highlight/selection and text
+  --destructive / --destructive-foreground: Destructive actions (e.g. delete)
+  --border / --input / --ring: Borders, input backgrounds, focus rings
+  --chart-1 ... --chart-5: Chart/graph colors
+
+  Sidebar-specific:
+  --sidebar / --sidebar-foreground: Sidebar background and text
+  --sidebar-primary / --sidebar-primary-foreground: Active/selected sidebar item and text
+  --sidebar-accent / --sidebar-accent-foreground: Sidebar hover/focus and text
+  --sidebar-border / --sidebar-ring: Sidebar border and focus ring
+*/
+
+:root {
+  --radius: 0.625rem;
+  --background: #FFFFFF;
+  --foreground: #292929;
+  --card: #FFFFFF;
+  --card-foreground: #292929;
+  --popover: #FFFFFF;
+  --popover-foreground: #292929;
+  --primary: #303A2FB2;
+  --primary-foreground: #F0EDEB;
+  --secondary: #AA9C6466;
+  --secondary-foreground: #292929;
+  --muted: #F7F7F7;
+  --muted-foreground: #737373;
+  --accent: #F7F7F7;
+  --accent-foreground: #1E293B;
+  --destructive: #E33629;
+  --destructive-foreground: #FFFFFF;
+  --border: #D4D4D4;
+  --input: #303A2F;
+  --ring: #B3B3B3;
+  --sidebar: #FAFAFA;
+  --sidebar-foreground: #1E293B;
+  --sidebar-primary: #1E293B;
+  --sidebar-primary-foreground: #FAFAFA;
+  --sidebar-accent: #F0F0F0;
+  --sidebar-accent-foreground: #1E293B;
+  --sidebar-border: #D4D4D4;
+  --sidebar-ring: #B3B3B3;
+}
+
+.dark {
+  --background: #181F2B;
+  --foreground: #FAFAFA;
+  --card: #232B3B;
+  --card-foreground: #FAFAFA;
+  --popover: #232B3B;
+  --popover-foreground: #FAFAFA;
+  --primary: #E0E6ED;
+  --primary-foreground: #232B3B;
+  --secondary: #3A4252;
+  --secondary-foreground: #FAFAFA;
+  --muted: #3A4252;
+  --muted-foreground: #B3B3B3;
+  --accent: #3A4252;
+  --accent-foreground: #FAFAFA;
+  --destructive: #E33629;
+  --destructive-foreground: #FFFFFF;
+  --border: #333A48;
+  --input: #232B3B;
+  --ring: #666C7A;
+  --sidebar: #232B3B;
+  --sidebar-foreground: #FAFAFA;
+  --sidebar-primary: #5A6B8C;
+  --sidebar-primary-foreground: #FAFAFA;
+  --sidebar-accent: #3A4252;
+  --sidebar-accent-foreground: #FAFAFA;
+  --sidebar-border: #333A48;
+  --sidebar-ring: #666C7A;
+}
+
+@layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }

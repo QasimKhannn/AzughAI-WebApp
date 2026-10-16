@@ -1,0 +1,134 @@
+project_name: "Azugh AI"
+version: "1.0.0"
+author: "Walid El Mouahidi"
+date: "15-02-2025"
+client: "Azugh"
+
+
+overview: |
+    Azugh AI is a **web application** that recommends fashion items based on **user preferences** and **travel destinations**. By leveraging machine learning, user interactions, and external fashion sources, Azugh AI refines recommendations dynamically.
+
+users:
+    primary:
+        - "Fashion Enthusiast - A user who is passionate about fashion and seeks personalized recommendations."
+    secondary:
+        - "Admin - A user who manages the application, including user data, products data, and scraping jobs."
+
+tech_stack:
+    backend:
+        languages:
+            - Python
+        frameworks:
+            - Django
+        database:
+            - MySQL
+        caching:
+            - Memcached
+        webserver:
+            - Nginx
+        additional_stack:
+            - Celery
+            - Redis
+    frontend:
+        languages:
+            - HTML
+            - CSS
+            - JavaScript
+        frameworks:
+            - None
+        additional_stack:
+            - None
+    external_dependencies:
+        - Stripe
+        - "Google Authentication"
+        - "OpenAI API"
+        - "Pinterest API"
+        - "Bubble.io for some UI components"
+    platform:
+        - web
+
+features:
+    feature_1:
+        name: "Authentication"
+        description: "This feature allows users to securely log in and access their accounts."
+        usecase: "Users need to authenticate to access personalized content and features."
+        input: "Username and password or third-party authentication tokens."
+        output: "Access token or session identifier for the authenticated user."
+
+    feature_2:
+        name: "Sign Up & Onboarding"
+        description: "Users provide key details like **name, gender, age, location**, and **fashion preferences** through predefined questions or image uploads."
+        usecase: "User sign up for first time access and provide necessary information for personalized recommendations."
+        input: "User details, fashion preferences, and location."
+        output: "User profile with preferences and settings."
+    
+    feature_3:
+        name: "Pinterest Integration"
+        description: "Connects with **Pinterest API** to understand user style based on past activity."
+        usecase: "Users can import their Pinterest boards to get personalized recommendations."
+        input: "Pinterest API key and user access token."
+        output: "User's Pinterest boards and style preferences."
+
+    feature_4:
+        name: "Search by Destination"
+        description: "Find clothing recommendations based on **local culture, seasonal trends, and user interactions** in that area."
+        usecase: "Users search for fashion items suitable for specific travel destinations."
+        input: "Destination location, travel dates."
+        output: "Curated list of clothing items suitable for the destination."
+    
+    feature_5:
+        name: "Personalized Feed"
+        description: "Dynamic clothing recommendations improve over time with **user interactions (clicks, likes, saves, purchases)**."
+        usecase: "Users browse personalized clothing recommendations tailored to their preferences."
+        input: "User profile, interaction history, preferences."
+        output: "Personalized clothing recommendations displayed in user feed."
+    
+    feature_6:
+        name: "Automated Web Scraping"
+        description: "Scrapes fashion items from **ASOS and other stores** using **Selenium & BeautifulSoup**."
+        usecase: "System automatically collects fashion items data from multiple sources."
+        input: "Target websites, scraping parameters, scheduling settings."
+        output: "Raw fashion product data ready for processing."
+    
+    feature_7:
+        name: "Embedding & Storage"
+        description: "Extracted product data is **processed, embedded, and stored** in a database with **Azure Blob Storage** for images."
+        usecase: "System processes and stores scraped fashion data in structured format."
+        input: "Raw fashion product data from scrapers."
+        output: "Processed and embedded fashion data stored in database."
+    
+    feature_8:
+        name: "Ranking Algorithm"
+        description: "Uses **K-Nearest Neighbors (KNN)** and **machine learning models** to personalize clothing suggestions."
+        usecase: "System ranks fashion items based on relevance to user preferences."
+        input: "User profile, preferences, fashion items data, contextual information."
+        output: "Ranked list of fashion items."
+    
+    feature_9:
+        name: "Continuous Model Retraining"
+        description: "Refines recommendations based on **user activity trends**."
+        usecase: "System improves recommendation accuracy over time through learning."
+        input: "User interaction data, feedback, purchase history."
+        output: "Updated machine learning models with improved recommendation accuracy."
+
+    feature_10:
+        name: "Admin Dashboard"
+        description: "Provides an interface for admins to **manage users, products, and scraping jobs**."
+        usecase: "Admins can monitor and control system operations."
+        input: "Admin credentials, user data, product data."
+        output: "Admin dashboard with monitoring and control features."
+    
+    feature_11:
+        name: "User Activity Tracking"
+        description: "Records user interactions like **clicks, likes, saves, purchases** for recommendation improvement."
+        usecase: "System tracks user behavior to enhance personalized recommendations."
+        input: "User interactions, timestamps, product IDs."
+        output: "User activity logs for recommendation analysis."
+
+
+timeline:
+    start_date: "15-02-2025"
+    end_date: "15-04-2025"
+    dev_method: "Linear"
+
+

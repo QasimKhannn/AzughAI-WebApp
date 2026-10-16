@@ -1,0 +1,61 @@
+@import url('./styles/app.css');
+
+html, body {
+  height: 100%;
+  padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+input,
+input::placeholder {
+  color: #000 !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #000 !important;
+  caret-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html, body, * {
+  scrollbar-width: thin;           /* Firefox */
+  scrollbar-color: #bcbcbc #f5f5f5; /* Firefox: thumb and track color */
+}
+
+::-webkit-scrollbar {
+  width: 6px;                      /* WebKit: scrollbar width */
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bcbcbc;             /* WebKit: thumb color */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;             /* WebKit: track color */
+}

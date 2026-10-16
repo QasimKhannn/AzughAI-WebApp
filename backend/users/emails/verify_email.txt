@@ -1,0 +1,15 @@
+Welcome to Azugh AI!
+
+Hi{% if user.first_name %} {{ user.first_name }}{% endif %},
+
+Thank you for signing up! Please verify your email address to complete your registration and access all features.
+
+Verify your email by clicking this link:
+{{ verification_link }}
+
+IMPORTANT: This verification link will expire in 1 hour for security reasons.
+
+If you didn't create an account with Azugh AI, please ignore this email.
+
+---
+© {{ year }} Azugh AI. All rights reserved.

@@ -1,0 +1,53 @@
+# version: '3.8'
+
+services:
+
+  backend:
+    container_name: azughai-backend
+    image: walidelmouahidi/azughai-backend:0.4
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      platforms: 
+        - linux/amd64
+        #- linux/arm64
+    expose:
+      - "8000"
+    volumes:
+      # - ./backend:/app
+      - backend_static:/app/staticfiles
+      - backend_media:/app/media
+    # env_file:
+    #   - ./backend/.env.
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/admin/"]
+      #test: ["CMD", "/app/healthcheck.sh"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 180s
+
+  frontend:
+    container_name: azughai-frontend
+    image: walidelmouahidi/azughai-frontend:0.4
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      platforms: 
+        - linux/amd64
+        #- linux/arm64
+    volumes:
+        - backend_static:/staticfiles
+        - backend_media:/media
+    ports:
+      - "80:80" 
+    environment:
+      - VITE_API_URL=/api
+      - VITE_STORAGE_HOST=http://localhost
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  backend_static:
+  backend_media:
